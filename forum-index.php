@@ -4,24 +4,21 @@ include_once('header.php');
 require_once('db/connex.php');
 ?>
 
-<h1>Bienvenu au Forum pour étudiants du Collège de Maisonneuve</h1>
+<h1>Welcome to the Maisonneuve College student forum</h1>
 <a href="forum-create.php" class="btn btn-primary">Add Article</a>
 <br><br>
 
 
 <?php
-// 1. Préparer la requête SQL pour aller chercher les articles
+
 $sql = "SELECT forum.*, utilisateur.name 
         FROM forum
         INNER JOIN utilisateur 
         ON forum.utilisateur_Id = utilisateur.utilisateurId
         ORDER BY forum.date DESC";
 
-
-// 2. Exécuter la requête
 $result = mysqli_query($connex, $sql);
 
-// 3. Vérifier si on a des articles
 $count = mysqli_num_rows($result);
 ?>
 <?php if($count > 0): ?>

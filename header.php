@@ -17,7 +17,6 @@ session_start();
             </div>
         <?php endif; ?>
 
-
     <nav>
         <ul>
             <li><a href="forum-index.php">Home</a></li>
