@@ -21,7 +21,6 @@ if($count == 1){
     $dbPassword = $user['password'];
 
     if(password_verify($password, $dbPassword)){
-    //4 
     session_regenerate_id();
     $_SESSION['id'] = $user['utilisateurId'];
     $_SESSION['name'] = $user['name'];
